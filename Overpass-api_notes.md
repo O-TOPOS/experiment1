@@ -20,12 +20,10 @@ pip install overpass
 
 ### 2.1 Example Scripts for testing
 
-### first example - still need to test
+### first example
 
  ```python
 
- # script downloaded from
- # https://github.com/mvexel/overpass-api-python-wrapper
 
  import overpass
  api = overpass.API()
@@ -33,14 +31,12 @@ pip install overpass
 
  ```
 
-### second example - still need to test
+### second example
 
  ```python
- # script downloaded from
- # https://gis.stackexchange.com/questions/180980/openstreetmap-python-api-bounding-box-request
 
  import overpass
- # bounding box coordinates
+ # Cambridge, UK bounding box coordinates
  # 0.0686, 52.1579, 0.1885, 52.2370
  min_long = 0.0686
  min_lat = 52.1579
