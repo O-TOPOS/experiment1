@@ -1,4 +1,4 @@
-## Draft doc for using OSM-api
+## Draft doc for using OSM-api python wrapper
 
 ### 1.0 introduction
 We describe here some OSM-api services and to select an appropriate one for usage in the web-app.
@@ -12,26 +12,51 @@ reference: https://wiki.openstreetmap.org/wiki/Frameworks#Webmaps
 ### 2.0 Overpass (read-only optimised API that collect OSM data)
 we document here how to use overpass api in python. The Overpass API (aka OSM Server Side) is a read-only API that serves custom OSM map data. It is a web-database where the client can sends a request to the API for selected data. For more information please see: https://wiki.openstreetmap.org/wiki/Overpass_API
 
-Git: https://github.com/mvexel/overpass-api-python-wrapper
+We will test here two different thin wrappers for OSM-API in python.
+One is called overpy and another is called overpass
+
+
+### 2.1 Example Scripts for overpy
+
+https://github.com/DinoTools/python-overpy
+
+```
+pip install overpy
+```
+
+simple get functions
+
+```python
+import overpy
+
+api = overpy.Overpass()
+
+# fetch all ways and nodes
+result = api.query("""
+    way(50.746,7.154,50.748,7.157) ["highway"];
+    (._;>;);
+    out body;
+    """)
+
+for way in result.ways:
+    print("Name: %s" % way.tags.get("name", "n/a"))
+    print("  Highway: %s" % way.tags.get("highway", "n/a"))
+    print("  Nodes:")
+    for node in way.nodes:
+        print("    Lat: %f, Lon: %f" % (node.lat, node.lon))
+
+```
+
+
+### 2.2 Example Scripts for overpass
+
+https://github.com/mvexel/overpass-api-python-wrapper
 
 ```
 pip install overpass
 ```
 
-### 2.1 Example Scripts for testing
-
-### first example
-
- ```python
-
-
- import overpass
- api = overpass.API()
- response = api.Get('node["name"="Oxford"]')
-
- ```
-
-### second example
+using bounding box to retrieve OSM data
 
  ```python
 
@@ -45,6 +70,7 @@ pip install overpass
 
  # query overpass within OpenStreetMap
  api = overpass.API()
+ #response = api.Get('node["name"="Oxford"]')
  map_query = overpass.MapQuery(min_lat,min_long,max_lat,max_long)
  response = api.Get(map_query)
 
