@@ -11,7 +11,7 @@
 
 ## Branches and Pull requests
 
-For collaborating in Github, everyone should create a branch (from master) to work on.  All changes should be made in that branch and once happy with the changes, then the branch is merged with the master branch. This means that everyone can be working on different things in his individual branch and then push all changes to the master branch. The individual branches can be deleted once merged with the master.
+For collaborating in Github, everyone should create a branch (from master) to work on.  All changes should be made in that branch and once happy with the changes, then the branch is merged with the master branch (this is the merge pull request). This means that everyone can be working on different things in his individual branch and then push all changes to the master branch. The individual branches can be deleted once merged with the master.
 
 In Github desktop:
 
