@@ -29,7 +29,7 @@ pip install overpass
 
  import overpass
  api = overpass.API()
- response = api.Get('node["name"="Salt Lake City"]')
+ response = api.Get('node["name"="Oxford"]')
 
  ```
 
@@ -41,10 +41,11 @@ pip install overpass
 
  import overpass
  # bounding box coordinates
- min_long = min(longs)
- min_lat = min(lats)
- max_long = max(longs)
- max_lat = max(lats)
+ # 0.0686, 52.1579, 0.1885, 52.2370
+ min_long = 0.0686
+ min_lat = 52.1579
+ max_long = 0.1885
+ max_lat = 52.2370
 
  # query overpass within OpenStreetMap
  api = overpass.API()
