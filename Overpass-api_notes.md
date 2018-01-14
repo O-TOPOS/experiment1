@@ -1,4 +1,4 @@
-## Draft doc for using OSM-api
+## Draft doc for collecting map data from OSM-API
 
 ### 1.0 introduction
 We describe here some OSM-api services and to select an appropriate one for usage in the web-app.
