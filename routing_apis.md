@@ -11,22 +11,25 @@ Useful features
 1. Route service  
 
 Request to  get fastest route between multiple points.
-    * Example: 'http://router.project-osrm.org/route/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219?overview=false'
-    * Modes: (car, bike, foot)
-    * Coordinates: longitude, latitude format (can be multiple)
+
+    - Example: 'http://router.project-osrm.org/route/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219?overview=false'
+    - Modes: (car, bike, foot)
+    - Coordinates: longitude, latitude format (can be multiple)
 
 2. Nearest service
 
 Snaps a coordinate to the street network and returns the nearest n matches.
-    * Example: Querying nearest three snapped locations of 13.388860,52.517037 with a bearing between 20° - 340°. 'http://router.project-osrm.org/nearest/v1/driving/13.388860,52.517037?number=3&bearings=0,20'
-    * Coordinates: longitude, latitude format (single))
+
+    - Example: Querying nearest three snapped locations of 13.388860,52.517037 with a bearing between 20° - 340°. 'http://router.project-osrm.org/nearest/v1/driving/13.388860,52.517037?number=3&bearings=0,20'
+    - Coordinates: longitude, latitude format (single))
 
 3. Trip service
 
 Traveling Salesman Problem
-    * Example: Round trip in Berlin with three stops 'http://router.project-osrm.org/trip/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219'
-    * Does not have to be the fastest router
-    * Round trip (same origin and destination)/ Non-round trip
+
+    - Example: Round trip in Berlin with three stops 'http://router.project-osrm.org/trip/v1/driving/13.388860,52.517037;13.397634,52.529407;13.428555,52.523219'
+    - Does not have to be the fastest router
+    - Round trip (same origin and destination)/ Non-round trip
 
 
 **Python example**
